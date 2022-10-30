@@ -120,7 +120,7 @@ export default function Home() {
           <Card marginTop="mt-4">
             <div className="text-center">
               <p className="text-2xl font-bold">{getAudioName(audio.voice)}</p>
-              <p className="text-gray-600 font-medium">{audio.text}</p>
+              <p className="text-gray-600 font-medium">"{audio.text}"</p>
 
               <audio controls className="mx-auto mt-4" src={audio.audio}>
                 Browser too outdated to use audio
