@@ -1,19 +1,20 @@
 "use client";
 
 import Image from "next/image";
-import styles from "./page.module.css";
 import voices from "../public/voices.json";
 import {
   Dropdown,
   DropdownItem,
   Button,
+  ButtonInline,
   Flex,
   Col,
   ColGrid,
   Block,
   Card,
 } from "@tremor/react";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { ArrowDownOnSquareIcon } from "@heroicons/react/24/outline";
 
 function getAudioName(value: string | null): string {
   if (value === null) {
@@ -41,6 +42,8 @@ export default function Home() {
   const [audio, setAudio] = useState<any>();
   const [error, setError] = useState<boolean>(false);
   const [btnText, setBtnText] = useState<string>("Generate");
+
+  const download = useRef<HTMLAnchorElement | null>(null);
 
   async function generateAudio() {
     setBtnText("Generating...");
@@ -122,8 +125,25 @@ export default function Home() {
               <p className="text-2xl font-bold">{getAudioName(audio.voice)}</p>
               <p className="text-gray-600 font-medium">"{audio.text}"</p>
 
+              <ButtonInline
+                text="Download"
+                iconPosition="right"
+                marginTop="mt-6"
+                icon={ArrowDownOnSquareIcon}
+                handleClick={() => {
+                  download.current ? download.current.click() : null;
+                }}
+              />
+
+              <a
+                ref={download}
+                className="display-none"
+                download={`${getAudioName(audio.voice).toLowerCase()}.mp3`}
+                href={audio.audio}
+              />
+
               <audio controls className="mx-auto mt-4" src={audio.audio}>
-                Browser too outdated to use audio
+                Browser too outdated to use audio. You can download above.
               </audio>
             </div>
           </Card>
