@@ -48,8 +48,18 @@ export default function Home() {
   async function generateAudio() {
     setBtnText("Generating...");
 
-    if (!voice || !text) {
-      setBtnText("Invalid input");
+    if (!voice) {
+      setBtnText("Select a voice");
+
+      setTimeout(() => {
+        setBtnText("Generate");
+      }, 1000);
+
+      return;
+    }
+
+    if (!text) {
+      setBtnText("Insert text");
 
       setTimeout(() => {
         setBtnText("Generate");
