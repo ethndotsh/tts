@@ -105,6 +105,7 @@ export default function Home() {
         <ColGrid numCols={1} gapX="gap-x-2" gapY="gap-y-2">
           <Col>
             <textarea
+              placeholder="Type your message here..."
               maxLength={300}
               className="h-20 px-4 pt-2 w-full border-gray-200 border rounded-md mt-5 focus:ring-blue-300 resize-none shadow-sm focus:ring-2 focus:outline-none text-gray-700 text-sm"
               onChange={(event) => setText(event.target.value)}
