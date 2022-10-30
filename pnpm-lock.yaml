@@ -11,6 +11,7 @@ specifiers:
   eslint: 8.26.0
   eslint-config-next: 13.0.0
   next: 13.0.0
+  next-axiom: ^0.15.0
   postcss: ^8.4.18
   react: 18.2.0
   react-dom: 18.2.0
@@ -22,6 +23,7 @@ dependencies:
   '@upstash/ratelimit': 0.1.5_@upstash+redis@1.15.1
   '@upstash/redis': 1.15.1
   next: 13.0.0_biqbaboplfbrettd7655fr4n2y
+  next-axiom: 0.15.0_next@13.0.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
 
@@ -1691,6 +1693,16 @@ packages:
   /natural-compare/1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
+
+  /next-axiom/0.15.0_next@13.0.0:
+    resolution: {integrity: sha512-43ajCZ9PFuihwVkdhTTKsAcdOvsCtugu7C0uKxkmbangq2Q7CwunnM6jcR1L1Pc/E+X3+Y4M99j9hZGOxoi7Lw==}
+    engines: {node: '>=15'}
+    peerDependencies:
+      next: '>= 12.1.4 < 14'
+    dependencies:
+      next: 13.0.0_biqbaboplfbrettd7655fr4n2y
+      whatwg-fetch: 3.6.2
+    dev: false
 
   /next/13.0.0_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-puH1WGM6rGeFOoFdXXYfUxN9Sgi4LMytCV5HkQJvVUOhHfC1DoVqOfvzaEteyp6P04IW+gbtK2Q9pInVSrltPA==}

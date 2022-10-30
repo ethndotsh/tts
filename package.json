@@ -13,6 +13,7 @@
     "@upstash/ratelimit": "^0.1.5",
     "@upstash/redis": "^1.15.1",
     "next": "13.0.0",
+    "next-axiom": "^0.15.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

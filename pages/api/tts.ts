@@ -1,7 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import { withAxiom, log } from "next-axiom"
 
-export default async function handler(
-    req: NextApiRequest,
+import type { AxiomAPIRequest } from "next-axiom/dist/withAxiom"
+
+async function handler(
+    req: AxiomAPIRequest,
     res: NextApiResponse,
 ) {
     if (req.method !== "POST") {
@@ -28,7 +31,7 @@ export default async function handler(
         return res.status(500).json({ statusCode: 500, message: "There was an internal error." });
     }
 
-    console.log({ text, voice, tts })
+    req.log.info("Audio generated", { text, voice, tts })
 
     const audio = `data:audio/mpeg;base64,${tts.data.v_str}`;
 
@@ -36,3 +39,5 @@ export default async function handler(
 
 
 }
+
+export default withAxiom(handler)
