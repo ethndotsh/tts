@@ -1,0 +1,198 @@
+[
+  {
+    "value": "en_us_ghostface",
+    "name": "Ghostface"
+  },
+  {
+    "value": "en_us_chewbacca",
+    "name": "Chewbacca"
+  },
+  {
+    "value": "en_us_c3po",
+    "name": "C3PO"
+  },
+  {
+    "value": "en_us_stitch",
+    "name": "Stitch"
+  },
+  {
+    "value": "en_us_stormtrooper",
+    "name": "Stormtrooper"
+  },
+  {
+    "value": "en_us_rocket",
+    "name": "Rocket"
+  },
+  {
+    "value": "en_female_madam_leota",
+    "name": "Madam Leota"
+  },
+  {
+    "value": "en_male_ghosthost",
+    "name": "Ghost Host"
+  },
+  {
+    "value": "en_male_pirate",
+    "name": "Pirate"
+  },
+  {
+    "value": "en_au_001",
+    "name": "English AU Female"
+  },
+  {
+    "value": "en_au_002",
+    "name": "English AU Male"
+  },
+  {
+    "value": "en_uk_001",
+    "name": "English UK Male 1"
+  },
+  {
+    "value": "en_uk_003",
+    "name": "English UK Male 2"
+  },
+  {
+    "value": "en_us_001",
+    "name": "English US Female 1"
+  },
+  {
+    "value": "en_us_002",
+    "name": "English US Female 2"
+  },
+  {
+    "value": "en_us_006",
+    "name": "English US Male 1"
+  },
+  {
+    "value": "en_us_007",
+    "name": "English US Male 2"
+  },
+  {
+    "value": "en_us_009",
+    "name": "English US Male 3"
+  },
+  {
+    "value": "en_us_010",
+    "name": "English US Male 4"
+  },
+  {
+    "value": "fr_001",
+    "name": "French Male 1"
+  },
+  {
+    "value": "fr_002",
+    "name": "French Male 2"
+  },
+  {
+    "value": "de_001",
+    "name": "German Female"
+  },
+  {
+    "value": "de_002",
+    "name": "German Male"
+  },
+  {
+    "value": "es_002",
+    "name": "Spanish Male"
+  },
+  {
+    "value": "es_mx_002",
+    "name": "Spanish MX Male"
+  },
+  {
+    "value": "br_001",
+    "name": "Portuguese BR Female 1"
+  },
+  {
+    "value": "br_003",
+    "name": "Portuguese BR Female 2"
+  },
+  {
+    "value": "br_004",
+    "name": "Portuguese BR Female 3"
+  },
+  {
+    "value": "br_005",
+    "name": "Portuguese BR Male"
+  },
+  {
+    "value": "id_001",
+    "name": "Indonesian Female"
+  },
+  {
+    "value": "jp_001",
+    "name": "Japanese Female 1"
+  },
+  {
+    "value": "jp_003",
+    "name": "Japanese Female 2"
+  },
+  {
+    "value": "jp_005",
+    "name": "Japanese Female 3"
+  },
+  {
+    "value": "jp_006",
+    "name": "Japanese Male"
+  },
+  {
+    "value": "kr_002",
+    "name": "Korean Male 1"
+  },
+  {
+    "value": "kr_004",
+    "name": "Korean Male 2"
+  },
+  {
+    "value": "kr_003",
+    "name": "Korean Female"
+  },
+  {
+    "value": "en_male_narrator",
+    "name": "Narrator"
+  },
+  {
+    "value": "en_male_funny",
+    "name": "Wacky"
+  },
+  {
+    "value": "en_female_emotional",
+    "name": "Peaceful"
+  },
+  {
+    "value": "en_male_cody",
+    "name": "Serious"
+  },
+  {
+    "value": "en_female_f08_salut_damour",
+    "name": "Alto (Singing)"
+  },
+  {
+    "value": "en_male_m03_lobby",
+    "name": "Tenor (Singing)"
+  },
+  {
+    "value": "en_female_f08_warmy_breeze",
+    "name": "Warmy Breeze (Singing)"
+  },
+  {
+    "value": "en_male_m03_sunshine_soon",
+    "name": "Sunshine Soon (Singing)"
+  },
+  {
+    "value": "en_female_ht_f08_glorious",
+    "name": "Glorious (Singing)"
+  },
+  {
+    "value": "en_male_sing_funny_it_goes_up",
+    "name": "It Goes Up (Singing)"
+  },
+  {
+    "value": "en_male_m2_xhxs_m03_silly",
+    "name": "Chipmunk (Singing)"
+  },
+  {
+    "value": "en_female_ht_f08_wonderful_world",
+    "name": "Dramatic (Singing)"
+  }
+]
