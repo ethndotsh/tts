@@ -28,7 +28,11 @@ export default async function handler(
         return res.status(500).json({ statusCode: 500, message: "There was an internal error." });
     }
 
+    console.log({ text, voice, tts })
+
     const audio = `data:audio/mpeg;base64,${tts.data.v_str}`;
 
     return res.status(200).json({ statusCode: 200, message: "Success", audio, text, voice });
+
+
 }
