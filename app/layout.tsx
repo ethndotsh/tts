@@ -1,7 +1,8 @@
 import "./globals.css";
 import "@tremor/react/dist/esm/tremor.css";
 
-export { reportWebVitals } from "next-axiom";
+// doesnt work with next 13 yet
+// export { reportWebVitals } from "next-axiom";
 
 export default function RootLayout({
   children,
