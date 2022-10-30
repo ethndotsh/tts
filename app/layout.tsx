@@ -1,6 +1,8 @@
 import "./globals.css";
 import "@tremor/react/dist/esm/tremor.css";
 
+import { AnalyticsWrapper } from "./components/analytics";
+
 // doesnt work with next 13 yet
 // export { reportWebVitals } from "next-axiom";
 
@@ -29,14 +31,9 @@ export default function RootLayout({
         </head>
       </head>
       <body>
-        {children} {/* not this */}
-        {/* you can remove this - for hosted version tracking */}
-        <script
-          async
-          defer
-          data-website-id="7db7a649-2dd4-49f4-9f05-a95a89a24c16"
-          src="https://umami-cc.vercel.app/umami.js"
-        />
+        {children}
+
+        <AnalyticsWrapper />
       </body>
     </html>
   );
