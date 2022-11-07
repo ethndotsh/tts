@@ -11,7 +11,7 @@ Built with
 
 ## Deploying
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fcursecodes%2Ftts.git&env=UPSTASH_REST_URL,UPSTASH_REST_TOKEN,TIKTOK_SESSION_ID&envDescription=Environment%20variables%20required%20for%20app&envLink=https%3A%2F%2Fgithub.com%2Fcursecodes%2Ftrs&project-name=tts&repo-name=tiktok-tts&demo-title=TikTok%20TTS&demo-description=A%20hosted%20version%20of%20the%20app&demo-url=https%3A%2F%2Ftts.cursecode.me&demo-image=https%3A%2F%2Ftts.cursecode.me%2F_next%2Fimage%3Furl%3D%252Ftiktok-256.png)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fcursecodes%2Ftts.git&env=UPSTASH_REST_URL,UPSTASH_REST_TOKEN,TIKTOK_SESSION_ID&envDescription=Environment%20variables%20required%20for%20app&envLink=https%3A%2F%2Fgithub.com%2Fcursecodes%2Ftts&project-name=tts&repo-name=tiktok-tts&demo-title=TikTok%20TTS&demo-description=A%20hosted%20version%20of%20the%20app&demo-url=https%3A%2F%2Ftts.cursecode.me&demo-image=https%3A%2F%2Ftts.cursecode.me%2F_next%2Fimage%3Furl%3D%252Ftiktok-256.png)
 
 To Deploy your own, you will need an [Upstash account](https://upstash.io) and a Redis database with them for the ratelimiting of the backend. 
 
