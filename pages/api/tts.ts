@@ -20,7 +20,7 @@ async function handler(
         'Cookie': `sessionid=${process.env.TIKTOK_SESSION_ID}`
     }
 
-    const fetchTTS = await fetch(`https://api16-normal-c-useast1a.tiktokv.com/media/api/text/speech/invoke/?text_speaker=${voice}&req_text=${encoded}&speaker_map_type=0&aid=1233`, { headers, method: "POST" });
+    const fetchTTS = await fetch(`https://api16-normal-useast5.us.tiktokv.com/media/api/text/speech/invoke/?text_speaker=${voice}&req_text=${encoded}&speaker_map_type=0&aid=1233`, { headers, method: "POST" });
     const tts = await fetchTTS.json();
 
     if (tts.message === "Couldn't load speech. Try again.") {
