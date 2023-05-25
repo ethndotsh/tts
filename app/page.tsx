@@ -98,6 +98,7 @@ export default function Home() {
             target="_blank"
             className="text-blue-700 font-medium"
             href="https://cursecode.me"
+            rel="noreferrer"
           >
             curse
           </a>
@@ -134,7 +135,9 @@ export default function Home() {
           <Card marginTop="mt-4">
             <div className="text-center">
               <p className="text-2xl font-bold">{getAudioName(audio.voice)}</p>
-              <p className="text-gray-600 font-medium">"{audio.text}"</p>
+              <p className="text-gray-600 font-medium">
+                &quot;{audio.text}&quot;
+              </p>
 
               <ButtonInline
                 text="Download"
