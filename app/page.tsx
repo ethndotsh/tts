@@ -37,10 +37,13 @@ async function getAudio(voice: string, text: string): Promise<any> {
 }
 
 export default function Home() {
-  const [voice, setVoice] = useState<string | null>(null);
+  const [voice, setVoice] = useState<string | null>("en_us_ghostface");
   const [text, setText] = useState<string | null>(null);
   const [audio, setAudio] = useState<any>();
   const [error, setError] = useState<boolean>(false);
+  const [errorText, setErrorText] = useState<string>(
+    "There was an error. Please try again later."
+  );
   const [btnText, setBtnText] = useState<string>("Generate");
 
   const download = useRef<HTMLAnchorElement | null>(null);
@@ -72,6 +75,7 @@ export default function Home() {
 
     if (data.statusCode !== 200) {
       setBtnText("Generate");
+      setErrorText(data.message);
       return setError(true);
     }
 
@@ -97,10 +101,10 @@ export default function Home() {
           <a
             target="_blank"
             className="text-blue-700 font-medium"
-            href="https://cursecode.me"
+            href="https://ethn.sh"
             rel="noreferrer"
           >
-            curse
+            ethn
           </a>
         </p>
         <ColGrid numCols={1} gapX="gap-x-2" gapY="gap-y-2">
@@ -110,14 +114,14 @@ export default function Home() {
               maxLength={300}
               className="h-20 px-4 pt-2 w-full border-gray-200 border rounded-md mt-5 focus:ring-blue-300 resize-none shadow-sm focus:ring-2 focus:outline-none text-gray-700 text-sm"
               onChange={(event) => setText(event.target.value)}
-            ></textarea>
+            />
           </Col>
           <Col>
             <Flex justifyContent="justify-center" spaceX="space-x-2">
               <Dropdown
                 placeholder="Select a voice"
-                defaultValue={undefined}
-                handleSelect={(value) => setVoice(value)}
+                defaultValue={"en_us_ghostface"}
+                onValueChange={(value) => setVoice(value)}
               >
                 {voices.map((voice) => (
                   <DropdownItem
@@ -127,7 +131,7 @@ export default function Home() {
                   />
                 ))}
               </Dropdown>
-              <Button text={btnText} handleClick={() => generateAudio()} />
+              <Button text={btnText} onClick={generateAudio} />
             </Flex>
           </Col>
         </ColGrid>
@@ -144,7 +148,7 @@ export default function Home() {
                 iconPosition="right"
                 marginTop="mt-6"
                 icon={ArrowDownOnSquareIcon}
-                handleClick={() => {
+                onClick={() => {
                   download.current ? download.current.click() : null;
                 }}
               />
@@ -164,9 +168,7 @@ export default function Home() {
         ) : error ? (
           <Card decoration="top" decorationColor="red" marginTop="mt-4">
             <div className="text-center">
-              <p className="font-medium">
-                There was an error. Please try again later.
-              </p>
+              <p className="font-medium">{errorText}</p>
             </div>
           </Card>
         ) : (
