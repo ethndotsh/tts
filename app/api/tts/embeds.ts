@@ -37,7 +37,7 @@ export async function sendSuccessEmbed({
       embeds: [
         {
           title: "New Generation",
-          description: text,
+          //   description: text,
           color: 3900150,
           fields: [
             { name: "Voice Name", value: voiceName },
