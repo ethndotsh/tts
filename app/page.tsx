@@ -2,17 +2,7 @@
 
 import Image from "next/image";
 import voices from "../public/voices.json";
-import {
-  Dropdown,
-  DropdownItem,
-  Button,
-  ButtonInline,
-  Flex,
-  Col,
-  ColGrid,
-  Block,
-  Card,
-} from "@tremor/react";
+import { Dropdown, DropdownItem, Button, Flex, Col, Card } from "@tremor/react";
 import { useState, useRef } from "react";
 import { ArrowDownOnSquareIcon } from "@heroicons/react/24/outline";
 
@@ -85,7 +75,7 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen justify-center mx-2 md:mx-0">
-      <Block maxWidth="max-w-3xl" textAlignment="text-center">
+      <div className="w-full max-w-2xl text-center">
         <div className="flex justify-center mt-24">
           <Image
             src="/tiktok-256.png"
@@ -107,7 +97,7 @@ export default function Home() {
             ethn
           </a>
         </p>
-        <ColGrid numCols={1} gapX="gap-x-2" gapY="gap-y-2">
+        <div className="w-full grid-cols-1 gap-2">
           <Col>
             <textarea
               placeholder="Type your message here..."
@@ -117,7 +107,7 @@ export default function Home() {
             />
           </Col>
           <Col>
-            <Flex justifyContent="justify-center" spaceX="space-x-2">
+            <Flex justifyContent="center" className="space-x-2">
               <Dropdown
                 placeholder="Select a voice"
                 defaultValue={"en_us_ghostface"}
@@ -131,27 +121,29 @@ export default function Home() {
                   />
                 ))}
               </Dropdown>
-              <Button text={btnText} onClick={generateAudio} />
+              <Button onClick={generateAudio}>{btnText}</Button>
             </Flex>
           </Col>
-        </ColGrid>
+        </div>
         {audio ? (
-          <Card marginTop="mt-4">
+          <Card className="mt-4">
             <div className="text-center">
               <p className="text-2xl font-bold">{getAudioName(audio.voice)}</p>
               <p className="text-gray-600 font-medium">
                 &quot;{audio.text}&quot;
               </p>
 
-              <ButtonInline
-                text="Download"
+              <Button
+                variant="light"
                 iconPosition="right"
-                marginTop="mt-6"
+                className="my-2"
                 icon={ArrowDownOnSquareIcon}
                 onClick={() => {
                   download.current ? download.current.click() : null;
                 }}
-              />
+              >
+                Download
+              </Button>
 
               <a
                 ref={download}
@@ -166,7 +158,7 @@ export default function Home() {
             </div>
           </Card>
         ) : error ? (
-          <Card decoration="top" decorationColor="red" marginTop="mt-4">
+          <Card decoration="top" decorationColor="red" className="mt-4">
             <div className="text-center">
               <p className="font-medium">{errorText}</p>
             </div>
@@ -174,7 +166,7 @@ export default function Home() {
         ) : (
           <></>
         )}
-      </Block>
+      </div>
     </div>
   );
 }

@@ -1,5 +1,4 @@
 import "./globals.css";
-import "@tremor/react/dist/esm/tremor.css";
 
 import { AnalyticsWrapper } from "./components/analytics";
 
