@@ -12,7 +12,8 @@ export async function POST(request: Request) {
   const encoded = text
     .replaceAll("+", "plus")
     .replaceAll(" ", "+")
-    .replaceAll("&", "and");
+    .replaceAll("&", "and")
+    .replaceAll("#", "");
 
   const ttsReq = await fetch(
     `https://api16-normal-c-useast1a.tiktokv.com/media/api/text/speech/invoke/?text_speaker=${voice}&req_text=${encoded}&speaker_map_type=0&aid=1233`,
@@ -30,7 +31,7 @@ export async function POST(request: Request) {
 
   if (tts.message === "Couldn't load speech. Try again.") {
     await sendErrorEmbed({
-      error: "Session token expired <@862719183447130122>",
+      error: "Session token might be expired",
       voice,
       text,
     });
@@ -38,7 +39,7 @@ export async function POST(request: Request) {
       {
         statusCode: 400,
         message:
-          "Our session token has expired. Our developers have been alerted.",
+          "Invalid text or voice. Please try again with a different text or voice.",
       },
       { status: 400 }
     );
