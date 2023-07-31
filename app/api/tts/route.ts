@@ -67,6 +67,16 @@ export async function POST(request: NextRequest) {
   }
 
   if (tts.status_code !== 0) {
+    if (tts.message === "Text too long to create speech audio") {
+      return NextResponse.json(
+        {
+          statusCode: 400,
+          message: "Message too long. Please try again with a shorter message.",
+        },
+        { status: 400 }
+      );
+    }
+
     await sendErrorEmbed({
       error: `${tts.message} (Error generating your speech) <@862719183447130122>`,
       voice,
