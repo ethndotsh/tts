@@ -1,9 +1,30 @@
-import { NextResponse } from "next/server";
+import { NextResponse, NextRequest } from "next/server";
 import { sendErrorEmbed, sendSuccessEmbed } from "./embeds";
+import { Ratelimit } from "@upstash/ratelimit";
+import { Redis } from "@upstash/redis";
 
 export const runtime = "edge";
 
-export async function POST(request: Request) {
+const ratelimit = new Ratelimit({
+  redis: Redis.fromEnv(),
+  analytics: true,
+  limiter: Ratelimit.slidingWindow(2, "5s"),
+});
+
+export async function POST(request: NextRequest) {
+  const id = request.ip ?? "anonymous";
+  const limit = await ratelimit.limit(id ?? "anonymous");
+
+  if (!limit.success) {
+    return NextResponse.json(
+      {
+        statusCode: 429,
+        message: "Slow down!! You are being ratelimited.",
+      },
+      { status: 429 }
+    );
+  }
+
   const { text, voice } = (await request.json()) as {
     text: string;
     voice: string;
