@@ -72,7 +72,7 @@ export async function sendErrorEmbed({
       embeds: [
         {
           title: "Error Generating Speech",
-          description: text,
+          // description: text,
           color: 15680580,
           fields: [
             { name: "Voice Name", value: voiceName },
