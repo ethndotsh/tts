@@ -27,6 +27,10 @@ export default function RootLayout({
             property="og:description"
             content="Generate TTS for free online! Powered by TikTok."
           />
+          <script 
+            defer 
+            src="https://assets.onedollarstats.com/tracker.js"> 
+          </script>
         </head>
       </head>
       <body>
